@@ -1,0 +1,14 @@
+﻿@using V2.ViewModels
+@model IndexViewModel
+
+
+<a asp-controller="Home" asp-action="Short">туда</a>
+
+<h1>@Model.Group.Id</h1>
+<h1>@Model.Group.Name</h1>
+@foreach(var item in Model.Group.IdStudent)
+{
+    <p>@item</p>
+}
+
+<p>@Model.Student.Name</p>
