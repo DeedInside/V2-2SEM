@@ -1,14 +1,21 @@
 ﻿@using V2.ViewModels
-@model IndexViewModel
+@model List<String>
 
 
 <a asp-controller="Home" asp-action="Short">туда</a>
 
-<h1>@Model.Group.Id</h1>
-<h1>@Model.Group.Name</h1>
-@foreach(var item in Model.Group.IdStudent)
-{
-    <p>@item</p>
-}
+<div>
 
-<p>@Model.Student.Name</p>
+    <form method="post">
+        <label>Student Name:</label><br />
+        <input type="text" name="studentName" /><br />
+        <label>Group Name:</label><br />
+        <input type="text" name="groupName" /><br />
+        
+        <input type="submit" value="Send" />
+    </form>
+    @if(Model != null){    
+        <h1>@Model[0]</h1>
+        <h1>@Model[1]</h1>
+    }
+</div>
